@@ -1,0 +1,125 @@
+
+body{
+    background: navajowhite;
+    background-size: cover;
+    font-family: 'Trebuchet MS', sans-serif; 
+    height: 1000vh;
+    color: white;
+}
+
+marquee {
+    margin-top: 120px;
+    font-size: 1vw;
+    width: 100%;
+    background-color: rgba(182, 144, 218, 0.6);
+    size: 20px;
+    color: white;
+}
+
+h1 h2 {
+    color: rgb(107, 206, 238);
+    font-size: 3vw;
+    margin-top: 1vw;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+a:hover {
+    color: aqua;
+}
+
+
+#topDiv {
+    width: 100%;
+    height: 1000px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-image: url('images/BirdsEyeToshima.webp');
+    background-attachment: fixed;
+}
+  
+#topDiv .overlay {
+    width: 100%;
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#topDiv table {
+    position: fixed; 
+}
+
+#topDiv th, td {
+    width: 30%;
+    size: 100vw;
+    padding: 20px;
+    text-align: right;
+    background-color: rgb(75, 160, 184);
+}
+
+#topDiv th img {
+    max-width: 10%;
+    max-height: 100px;
+}
+
+#topDiv a {
+    color: white;
+    size: 5px;
+}
+
+/* inspired by https://www.sitepoint.com/css-typewriter-effect/ */
+.typedOut {
+    background-color: rgba(182, 144, 218, 0.6);
+    size: 20px;
+    overflow: hidden;
+    text-align: center;
+    width: 0;
+    font-size: 1vw;
+    color: white;
+    animation: 
+    typing 3e3ms steps(1000, end) forwards;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+.information {
+    position: fixed;
+    background-color: aliceblue;
+}
+
+
+.mainLand img {
+    margin-top: 50px;
+    padding: 20px;
+    width: 50%;
+}
+
+.mainLand {
+    display: flex;
+    align-items: center;
+    grid-template-columns: 1fr 3fr 2fr;   
+}
+
+.desc{
+	box-sizing:border-box;
+	width:30%;
+	float:left;
+	margin-right:2em;
+	padding:5px;
+    background-color: rgb(69, 211, 216);
+}
