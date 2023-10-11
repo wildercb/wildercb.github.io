@@ -1,0 +1,96 @@
+body {
+    background-color: #f67c31;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #f8f8f8;
+}
+
+h1 {
+    color: #fbad8b;
+    font-size: 4vw;
+}
+
+nav {
+    margin-left: 10px;
+    background-color: antiquewhite;
+    max-width: 200px;
+    height: 40px;
+}
+nav a {
+    color: black;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+nav a:hover {
+    color:rgb(127, 255, 212);
+}
+nav img {
+    max-height: 30px;
+    padding-top: 5px;
+}
+footer {
+    padding: 100px;
+    border-style:double;
+    border-color:aliceblue;
+    border-width: 1vw;
+}
+
+p {
+    font-size: 1.4vw;
+}
+
+a:visited{
+    color: cyan;
+}
+marquee {
+    color: #29142c;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: marquee 10s linear infinite;
+  }
+
+/* I am using keyframes, tranform for animation as my skills stretch 
+   ref: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations */
+  @keyframes marquee {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
+
+th{
+    background-color:antiquewhite;
+    border-radius: 3vh;
+    border-style:ridge;
+    border-color:aqua;
+}
+th p{
+    color: black;
+}
+tr {
+    background-color: black;
+}
+#imBox td{
+    padding: 20px;
+    padding-right: 500px;
+}
+
+#imBox img{
+    width: 500%;
+}
+#imBox a:hover{
+    color: rgba(0,0,0,0)
+}
+
+#imOverlay {
+    max-width: 100%;
+    margin-top: 100px;
+    padding: 100px;
+    color: black;
+    height: 300px;
+    background-image: url('images/lieNose.jpg');
+}
+
+#conTable {
+    padding: 20px;
+    margin-left: 25vh;
+    align-items: center;
+}
