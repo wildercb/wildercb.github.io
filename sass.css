@@ -1,0 +1,198 @@
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  /* I already knew how to do this but we must show references for 
+  things not shown in class so I found ones that do something similar
+  https://www.bannerbear.com/blog/how-to-overlay-text-on-an-image-in-html-and-css/ 
+  https://forums.macrumors.com/threads/possible-to-use-gif-as-background-in-a-div.489377/ */
+}
+body a:hover {
+  text-decoration: underline;
+  color: rgb(255, 217, 0);
+}
+body a:visited {
+  color: rgb(244, 158, 8);
+}
+body a img[alt] {
+  color: rgb(244, 158, 8);
+}
+body:before {
+  /* Alternative to using the alt tag for background image and has same effect */
+  content: "Background space image not loaded";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  margin: auto;
+}
+body nav {
+  position: sticky;
+  top: 0;
+  background-color: #300dcf;
+  z-index: 1;
+}
+body nav a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS", sans-serif;
+}
+body nav a:hover {
+  text-decoration: underline;
+  color: rgb(255, 217, 0);
+}
+body nav a:visited {
+  color: rgb(244, 158, 8);
+}
+body footer {
+  color: #fff;
+  background-color: #300dcf;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+}
+body .sect-text {
+  width: 100%;
+  float: left;
+}
+body .sect-image {
+  width: 69%;
+  float: right;
+}
+body .sect-image img {
+  width: 15%;
+  height: auto;
+  display: block;
+}
+body #about {
+  padding: 10px;
+  width: 100%;
+  color: rgb(244, 158, 8);
+  position: absolute;
+  text-shadow: 1px 1px black;
+  position: center;
+}
+body #about h1, body #about p {
+  margin-left: 10px;
+}
+body #about h1:hover, body #about p:hover {
+  color: white;
+  text-shadow: 2px 2px black;
+}
+body #overlay {
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 500px) {
+  body #overlay {
+    height: 300px;
+    width: 500px;
+  }
+}
+body #overlay figure {
+  color: rgb(244, 158, 8);
+  margin: 0;
+}
+body #overlay figure img {
+  width: 100%;
+  height: 100%;
+  max-height: 660px;
+  object-fit: cover;
+}
+body #social-links {
+  margin-top: 690px;
+  z-index: 3;
+  background-color: rgba(201, 110, 18, 0.607);
+  height: 120px;
+  width: 50%;
+}
+body #social-links img {
+  width: 15%;
+}
+body #social-links:hover {
+  background: rgba(209, 23, 23, 0.81);
+}
+body #education,
+body #education,
+body #experience,
+body #skills,
+body #contact {
+  color: rgb(255, 255, 255);
+  padding: 50px;
+  position: relative;
+  margin: 10px;
+  width: 100%;
+}
+body #education:hover,
+body #education:hover,
+body #experience:hover,
+body #skills:hover,
+body #contact:hover {
+  background-color: rgba(255, 255, 255, 0.636);
+  color: black;
+  text-shadow: 1px 1px #cfbf0d;
+}
+body #education {
+  margin-top: 60px;
+}
+body #about,
+body #education,
+body #experience,
+body #skills,
+body #contact {
+  padding: 30px 0;
+}
+@media (max-width: 1000px) {
+  body #overlay h1 {
+    margin-top: 550px;
+  }
+  body #social-links {
+    margin-top: 800px;
+  }
+  body #social-links img {
+    width: 20%;
+  }
+  body #education {
+    margin-top: 60px;
+  }
+  body #about,
+  body #education,
+  body #experience,
+  body #skills,
+  body #contact {
+    padding: 20px 0;
+  }
+}
+@media (max-width: 500px) {
+  body #overlay h1 {
+    margin-top: 400px;
+  }
+  body #social-links {
+    margin-top: 650px;
+  }
+  body #social-links img {
+    width: 15%;
+    margin-left: 50px;
+  }
+  body #education {
+    margin-top: 50px;
+  }
+  body #about,
+  body #education,
+  body #experience,
+  body #skills,
+  body #contact {
+    padding: 10px 0;
+    width: 100%;
+  }
+}/*# sourceMappingURL=sass.css.map */
