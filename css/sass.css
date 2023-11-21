@@ -157,6 +157,8 @@ body #contact {
   padding: 50px;
   position: relative;
   margin: 10px;
+  transition: background 0.3s ease;
+  background: rgba(208, 239, 6, 0.19);
 }
 body #education:hover,
 body #experience:hover,

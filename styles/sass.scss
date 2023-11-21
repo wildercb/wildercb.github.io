@@ -194,7 +194,8 @@ body {
     padding: 50px;
     position: relative;
     margin: 10px;
-
+    transition: background 0.3s ease;
+    background: $dim-light-color;
     &:hover {
       width: 100%;
       padding-left: 1vh;
