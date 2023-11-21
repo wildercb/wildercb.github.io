@@ -1,0 +1,238 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+body a {
+  color: white;
+}
+body a:hover {
+  text-decoration: underline;
+  color: rgb(244, 158, 8);
+}
+body a:visited {
+  color: rgb(244, 158, 8);
+}
+body a img[alt] {
+  color: rgb(244, 158, 8);
+}
+body:before {
+  content: "Background space image not loaded";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  margin: auto;
+}
+body nav {
+  text-align: center;
+  position: sticky;
+  top: 0;
+  background-color: #4912c0;
+  z-index: 1;
+}
+body nav a {
+  text-decoration: none;
+  color: #fff;
+  padding: 4% 5%;
+}
+body nav a:hover {
+  text-decoration: underline;
+  color: rgb(255, 217, 0);
+}
+body nav a:visited {
+  color: rgb(244, 158, 8);
+}
+body footer {
+  color: #fff;
+  background-color: #4912c0;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+}
+body .sect-text {
+  width: 100%;
+  float: left;
+}
+body .description {
+  width: 100%;
+}
+body .sect-image {
+  margin-right: -50%;
+  width: 80%;
+  float: right;
+}
+body .sect-image img {
+  width: 15%;
+  height: auto;
+  display: block;
+}
+body #about {
+  padding: 10px;
+  width: 100%;
+  position: absolute;
+  position: center;
+}
+body #about h1 {
+  font-size: 4vh;
+  text-shadow: 2px 2px rgb(13, 188, 207);
+  color: white;
+}
+body #about h5 {
+  font-size: 2.45vh;
+  color: rgb(13, 188, 207);
+}
+body #about h5:hover {
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.322);
+}
+body #about h1,
+body #about h5 {
+  padding-left: 10px;
+  border-radius: 5px;
+}
+body #overlay {
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 500px) {
+  body #overlay {
+    height: 300px;
+    width: 500px;
+  }
+}
+body #overlay figure {
+  color: rgb(244, 158, 8);
+  margin: 0;
+}
+body #overlay figure img {
+  width: 100%;
+  height: 100%;
+  max-height: 660px;
+  object-fit: cover;
+}
+body #social-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 700px;
+  z-index: 3;
+  background-color: #4912c0;
+  height: 120px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+}
+body #social-links a {
+  padding: 0.5vh;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  transition: background 0.3s ease;
+  background: rgba(208, 239, 6, 0.19);
+}
+body #social-links a:hover {
+  background: rgb(244, 158, 8);
+}
+body #social-links a img {
+  width: 13vh;
+  height: auto;
+  margin-right: 5px;
+}
+body #education,
+body #experience,
+body #skills,
+body #contact {
+  color: rgb(255, 255, 255);
+  padding: 50px;
+  position: relative;
+  margin: 10px;
+}
+body #education:hover,
+body #experience:hover,
+body #skills:hover,
+body #contact:hover {
+  width: 100%;
+  padding-left: 1vh;
+  background-color: rgba(244, 158, 8, 0.771);
+  color: black;
+  text-shadow: 1px 1px rgb(13, 188, 207);
+}
+body #education:hover a,
+body #experience:hover a,
+body #skills:hover a,
+body #contact:hover a {
+  color: black;
+}
+body #education:hover .description,
+body #experience:hover .description,
+body #skills:hover .description,
+body #contact:hover .description {
+  width: 90%;
+}
+body #education:hover img,
+body #experience:hover img,
+body #skills:hover img,
+body #contact:hover img {
+  width: 15%;
+}
+body #education {
+  margin-top: 60px;
+}
+body #about,
+body #education,
+body #experience,
+body #skills,
+body #contact {
+  padding: 30px 0;
+}
+@media (max-width: 800px) {
+  body #overlay h1 {
+    margin-top: 550px;
+  }
+  body #social-links {
+    margin-top: 800px;
+  }
+  body #social-links img {
+    width: 20%;
+  }
+  body #education {
+    margin-top: 60px;
+  }
+  body #about,
+  body #education,
+  body #experience,
+  body #skills,
+  body #contact {
+    padding: 20px 0;
+  }
+}
+@media (max-width: 500px) {
+  body #overlay h1 {
+    margin-top: 400px;
+  }
+  body #social-links {
+    margin-top: 650px;
+  }
+  body #education {
+    margin-top: 50px;
+  }
+  body #about,
+  body #education,
+  body #experience,
+  body #skills,
+  body #contact {
+    padding: 10px 0;
+    width: 100%;
+  }
+}/*# sourceMappingURL=sass.css.map */

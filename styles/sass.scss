@@ -1,0 +1,285 @@
+// variables
+$primary-color: #4912c0;
+$secondary-color: #035e35;
+$gold-color: rgb(255, 217, 0);
+$white-color: rgb(255, 255, 255);
+$highlight-color: rgb(244, 158, 8);
+$dim-light-color: rgba(208, 239, 6, 0.19);
+$light-blue: rgb(13, 188, 207);
+$min-width: 500px;
+
+$font: "Open Sans", sans-serif;
+
+@mixin high-contrast-text {
+  color: #fff;
+  background-color: $primary-color;
+}
+
+body {
+  font-family: $font;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+
+  a {
+    color: white;
+    &:hover {
+      text-decoration: underline;
+      color: $highlight-color;
+    }
+
+    &:visited {
+      color: $highlight-color;
+    }
+
+    img {
+      &[alt] {
+        color: $highlight-color;
+      }
+    }
+  }
+
+  &:before {
+    content: "Background space image not loaded";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    margin: auto;
+  }
+
+  nav {
+    text-align: center;
+    position: sticky;
+    top: 0;
+    background-color: $primary-color;
+    z-index: 1;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      padding: 4% 5%;
+
+      &:hover {
+        text-decoration: underline;
+        color: $gold-color;
+      }
+
+      &:visited {
+        color: $highlight-color;
+      }
+    }
+  }
+
+  footer {
+    @include high-contrast-text;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+  }
+
+  .sect-text {
+    width: 100%;
+    float: left;
+  }
+
+  .description {
+    width: 100%;
+  }
+
+  .sect-image {
+    margin-right: -50%;
+    width: 80%;
+    float: right;
+
+    img {
+      width: 15%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  #about {
+    padding: 10px;
+    width: 100%;
+    position: absolute;
+    position: center;
+
+    h1 {
+      font-size: 4vh;
+      text-shadow: 2px 2px $light-blue;
+      color: white;
+    }
+    h5 {
+      font-size: 2.45vh;
+      color: $light-blue;
+      &:hover {
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.322);
+      }
+    }
+    h1,
+    h5 {
+      padding-left: 10px;
+      border-radius: 5px;
+    }
+  }
+
+  #overlay {
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: $min-width) {
+      height: 300px;
+      width: 500px;
+    }
+
+    figure {
+      color: $highlight-color;
+      margin: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        max-height: 660px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  #social-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 700px;
+    z-index: 3;
+    background-color: $primary-color;
+    height: 120px;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    a {
+      padding: 0.5vh;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: $white-color;
+      transition: background 0.3s ease;
+      background: $dim-light-color;
+
+      &:hover {
+        background: $highlight-color;
+      }
+      img {
+        width: 13vh;
+        height: auto;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  #education,
+  #experience,
+  #skills,
+  #contact {
+    color: $white-color;
+    padding: 50px;
+    position: relative;
+    margin: 10px;
+
+    &:hover {
+      width: 100%;
+      padding-left: 1vh;
+      background-color: rgba(244, 158, 8, 0.771);
+      color: black;
+      text-shadow: 1px 1px $light-blue;
+      a {
+        color: black;
+      }
+      .description {
+        width: 90%;
+      }
+      img {
+        width: 15%;
+      }
+    }
+  }
+
+  $phone-breakpoint: 500px;
+  $device-breakpoint: 800px;
+
+  // Full size screen settings
+  #education {
+    margin-top: 60px;
+  }
+
+  #about,
+  #education,
+  #experience,
+  #skills,
+  #contact {
+    padding: 30px 0;
+  }
+
+  // Mid size screen settings
+  @media (max-width: $device-breakpoint) {
+    #overlay {
+      h1 {
+        margin-top: 550px;
+      }
+    }
+
+    #social-links {
+      margin-top: 800px;
+      img {
+        width: 20%;
+      }
+    }
+
+    #education {
+      margin-top: 60px;
+    }
+
+    #about,
+    #education,
+    #experience,
+    #skills,
+    #contact {
+      padding: 20px 0;
+    }
+  }
+
+  // Phone size screen settings
+  @media (max-width: $phone-breakpoint) {
+    #overlay {
+      h1 {
+        margin-top: 400px;
+      }
+    }
+
+    #social-links {
+      margin-top: 650px;
+    }
+
+    #education {
+      margin-top: 50px;
+    }
+
+    #about,
+    #education,
+    #experience,
+    #skills,
+    #contact {
+      padding: 10px 0;
+      width: 100%;
+    }
+  }
+}
