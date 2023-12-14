@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/testStyles.css">
+    <title>Chess Puzzles</title>
+</head>
+<body>
+    <nav>
+        <a href = "contact.html">Contact</a>
+        <a href = "chessEngines.html">Stockfish Evaluator</a>
+        <a href = "chessTest.html">Puzzles</a>
+        <a href = "index.html"><img src = "images/House.png" alt = "Home"></a>
+    </nav>
+    <header>
+        <h1>ELO Test</h1>
+    </header>
+    <div id = puzzles>
+    <div class="puzzleImg" id ="puzzle1">
+        <img id="chessPuzzle1" src="images/Puzzle1.png" alt ="Puzzle 1">
+    </div>
+    <div class ="puzzleBox" id="puzzleBox1">
+        <label class="pgnInput">Enter Move in algebraic notation:</label>
+        <input type="text" id="puzzleInput1">
+        <button id="puzzleButton1">Submit Move</button>
+    </div>
+
+
+    <div class="puzzleImg" id ="puzzle2">
+        <img id="chessPuzzle2"  src="images/Puzzle2.png" alt = "Puzzle 2">
+    </div>
+    <div class ="puzzleBox" id="puzzleBox2">
+        <label class="pgnInput">Enter Move in algebraic notation:</label>
+        <input type="text" id="puzzleInput2">
+        <button id="puzzleButton2">Submit Move</button>
+    </div>
+
+    <div class="puzzleImg" id ="puzzle3">
+        <img id="chessPuzzle3"  src="images/Puzzle3.png" alt = "Puzzle 3">
+    </div>
+    <div class ="puzzleBox" id="puzzleBox3">
+        <label class="pgnInput">Enter Move in algebraic notation:</label>
+        <input type="text" id="puzzleInput3">
+        <button id="puzzleButton3">Submit Move</button>
+    </div>
+    <aside id ="eloBox">
+        <p>Complete the puzzles to reveal your ELO</p>
+    </aside>
+</div>
+
+
+
+    
+    <script type="module" src="scripts/chessSaver.js"></script>
+    <script type="module" src="scripts/script.js"></script>
+    <footer>
+        <article>
+            <h2>Hello</h2> thanks for visiting here is how to <a href="contact.html">contact me</a>
+        </article>
+    </footer>
+</body>
+</html>

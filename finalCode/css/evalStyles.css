@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&display=swap");
+@import url("https://fonts.cdnfonts.com/css/common-pixel");
+body {
+  background-color: black;
+  background-image: url("../images/200wBackground.webp");
+  background-size: cover;
+  background-position: center center;
+}
+
+#chessboard {
+  margin-top: 200px;
+  margin-left: 36%;
+  margin-right: 20%;
+  width: 30%;
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  grid-template-rows: repeat(8, 50px);
+}
+@media (max-width: 1200px) {
+  #chessboard {
+    margin-left: 25%;
+  }
+}
+@media (max-width: 1400px) {
+  #chessboard {
+    margin-left: 30%;
+  }
+}
+@media (max-width: 800px) {
+  #chessboard {
+    margin-left: 5%;
+  }
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.white {
+  background-color: #eee;
+}
+
+.black {
+  background-color: #555;
+  color: #fff;
+}
+
+.chess-piece {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 20px;
+  cursor: move;
+  user-select: none;
+}
+
+#fenButton,
+#refButton,
+#genFen {
+  margin-top: 30px;
+  margin-left: 180px;
+  background: linear-gradient(to bottom, yellow 0%, #ffff33 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+#fenButton:active,
+#refButton:active,
+#genFen:active {
+  background-color: #e6e600;
+}
+#fenButton:hover,
+#refButton:hover,
+#genFen:hover {
+  transform: scale(1.05);
+  animation: button-hover 0.2s ease-in-out;
+}
+
+@keyframes button-hover {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+#fenButton {
+  margin-top: 20px;
+  margin-left: 36%;
+}
+@media (max-width: 1200px) {
+  #fenButton {
+    margin-left: 25%;
+  }
+}
+@media (max-width: 1400px) {
+  #fenButton {
+    margin-left: 30%;
+  }
+}
+@media (max-width: 800px) {
+  #fenButton {
+    margin-left: 5%;
+  }
+}
+
+#genFen {
+  margin-right: 40%;
+}
+
+#puzzle1 {
+  margin-top: 500px;
+}
+
+#stockFishBox {
+  margin-top: 80px;
+  text-align: center;
+  width: 60%;
+  min-width: 320px;
+  background-color: grey;
+  margin-bottom: 80px;
+  margin-left: 20%;
+  padding-bottom: 40px;
+  border-radius: 5px;
+}
+#stockFishBox textarea {
+  height: 100px;
+  width: 300px;
+}
+#stockFishBox #stockfishOutput {
+  height: 100px;
+}/*# sourceMappingURL=evalStyles.css.map */

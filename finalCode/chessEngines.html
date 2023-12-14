@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/evalStyles.css">
+
+    <title>Chess Evaluator</title>
+    <style>
+    </style>
+</head>
+<body>
+    <nav>
+        <a href = "contact.html">Contact</a>
+        <a href = "chessEngines.html">Stockfish Evaluator</a>
+        <a href = "chessTest.html">Puzzles</a>
+        <a href = "index.html"><img src = "images/House.png" alt = "Home"></a>
+    </nav>
+
+      
+    <div id="board"></div>
+    <div id="chessboard"></div>
+    
+    <button id ='fenButton'>Show FEN</button>
+    <button id='refButton'>Refresh</button>
+   
+      <!--Idea taken from https://codepen.io/mherreshoff/pen/poENNdE, altered for FEN strings-->
+      <div id="stockFishBox">
+        <h1>Stockfish Chess Explorer</h1>
+        <p>Stockfish's top 5 moves.</p>
+        <textarea id="fenHolder" placeholder="Paste FEN"></textarea>        
+        <textarea id="stockfishOutput"  placeholder="Stockfish Analysis Output"></textarea>
+        <button id = "genFen" onclick="analyzeFEN()">Analyze FEN</button>
+      </div>
+
+      <script type="module" src="scripts/stockFishQuery.js"></script>
+    <script type="module" src="scripts/chessBoard.js"></script>
+      <footer>
+        <article>
+        <h2>Hello</h2> thanks for visiting here is how to <a href="contact.html">contact me</a>
+        </article>
+    </footer>
+</body>
+</html>

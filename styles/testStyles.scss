@@ -1,0 +1,58 @@
+@import "variables.scss";
+
+body {
+  @include starBody;
+}
+
+nav {
+  background: black;
+}
+header {
+  text-shadow: 3px 3px black;
+}
+
+#eloBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: $grey;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 20px;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  color: $textColor2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#puzzle1 {
+  margin-top: 600px;
+}
+
+#puzzles {
+  @media (min-width: $med4Breakpoint) {
+    width: 50%;
+  }
+}
+.puzzleImg {
+  background-color: $lightGrey;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: 0%;
+  border-radius: 5px;
+  img {
+    width: 40%;
+  }
+}
+.puzzleBox {
+  margin-left: 30%;
+  background-color: $grey;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 20px;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  color: $textColor2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

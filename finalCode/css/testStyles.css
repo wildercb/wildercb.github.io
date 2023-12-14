@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&display=swap");
+@import url("https://fonts.cdnfonts.com/css/common-pixel");
+body {
+  background-color: black;
+  background-image: url("../images/200wBackground.webp");
+  background-size: cover;
+  background-position: center center;
+}
+
+nav {
+  background: black;
+}
+
+header {
+  text-shadow: 3px 3px black;
+}
+
+#eloBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: grey;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 20px;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#puzzle1 {
+  margin-top: 600px;
+}
+
+@media (min-width: 1600px) {
+  #puzzles {
+    width: 50%;
+  }
+}
+
+.puzzleImg {
+  background-color: rgba(211, 211, 211, 0.64);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: 0%;
+  border-radius: 5px;
+}
+.puzzleImg img {
+  width: 40%;
+}
+
+.puzzleBox {
+  margin-left: 30%;
+  background-color: grey;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 20px;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}/*# sourceMappingURL=testStyles.css.map */

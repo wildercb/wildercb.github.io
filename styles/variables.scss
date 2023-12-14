@@ -1,0 +1,140 @@
+// IBM Plex mono font
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&display=swap");
+
+//Pixel font
+@import url("https://fonts.cdnfonts.com/css/common-pixel");
+
+$blockFont: "impact", "arial", "sans-serif";
+$IBMMonoFont: "IBM Plex FMono", monospace;
+$pixelFont: "Common Pixel", "sans serif";
+
+$textColor1: black;
+$textColor2: white;
+$textHighlight: yellow;
+$lableColor: grey;
+
+// For navbar effect from https://codepen.io/Ks145/pen/MWGxbYr
+$glowColor: hsl(186 100% 69%);
+
+$bodyColor: #224786;
+$bodyColor2: rgb(12, 1, 1);
+$buttonColor: indigo;
+$grey: grey;
+$lightGrey: rgba(211, 211, 211, 0.64);
+
+$medBreakpoint: 1000px;
+$med2Breakpoint: 1200px;
+$med3Breakpoint: 1400px;
+$med4Breakpoint: 1600px;
+$bigBreakpoint: 1800px;
+$phoneBreakpoint: 400px;
+$tab2Breakpoint: 600px;
+$tab1Breakpoint: 800px;
+
+@mixin navButtons {
+  top: 20px;
+  text-align: center;
+  justify-content: space-between;
+  letter-spacing: 1em;
+  a {
+    color: $glowColor;
+    padding: 1% 1%;
+    letter-spacing: 4px;
+    transition: 0.5s;
+    cursor: pointer;
+    text-decoration: none;
+    // For navbar effect from https://codepen.io/Ks145/pen/MWGxbYr
+    &:hover {
+      background: #03e9f4;
+      color: #050801;
+      box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+        0 0 200px #03e9f4;
+      -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+    }
+    img {
+      width: 50px;
+      margin: auto;
+      vertical-align: middle;
+    }
+    @media (max-width: $phoneBreakpoint) {
+      a {
+        padding: 0;
+      }
+    }
+    @media (max-width: $tab2Breakpoint) {
+      background-color: $lableColor;
+    }
+  }
+}
+
+@mixin link-box {
+  @include navButtons;
+  position: absolute;
+  z-index: 1;
+  padding: 20px;
+  a {
+    margin-bottom: 10px;
+    position: relative;
+    clear: both;
+    display: inline-block;
+    width: calc(33.33% - 50px);
+    padding: 10px;
+    &:hover {
+      color: #fff;
+    }
+    @media (max-width: $phoneBreakpoint) {
+    }
+    @media (max-width: $med2Breakpoint) {
+      width: 20%;
+    }
+  }
+}
+
+@mixin sideBar {
+  @include link-box;
+  left: -20vh;
+  width: 100vh;
+  right: 200px;
+  position: absolute;
+  a {
+    width: calc(50% - 20px);
+    text-align: left;
+    img {
+      margin: 50px;
+      width: 50%;
+      text-align: center;
+    }
+  }
+  @media (max-width: $phoneBreakpoint) {
+    width: 100%;
+  }
+  @media (max-width: $med2Breakpoint) {
+    left: 0;
+    text-align: left;
+    a {
+      text-align: center;
+      width: 40%;
+    }
+  }
+  @media (max-width: $bigBreakpoint) {
+  }
+}
+
+@mixin baseButton {
+  background-color: $textHighlight;
+  color: $textColor1;
+  border: none;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0px 2px;
+  cursor: pointer;
+}
+
+@mixin starBody {
+  background-color: black;
+  //Image src https://giphy.com/gifs/stars-U3qYN8S0j3bpK
+  background-image: url("../images/200wBackground.webp");
+  background-size: cover;
+  background-position: center center;
+}
