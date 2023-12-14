@@ -1,14 +1,14 @@
 // Get all elements with the class 'textBox'
 const textBoxes = document.querySelectorAll('.textBox');
 
-// Define the options for the Intersection Observer
+//Variables to effect textBox as user scrolls to it
 const options = {
   root: null,
   rootMargin: '0px',
   threshold: 0.1
 };
 
-// Create a new Intersection Observer for each textBox element
+//Highlight the textBox at intersection
 textBoxes.forEach(textBox => {
   const observer = new IntersectionObserver(function (entries, observer) {
     entries.forEach(entry => {

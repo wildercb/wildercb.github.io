@@ -123,15 +123,19 @@ for (var col = 0; col < 8; col++) {
 }
 //Button to return fen 
 var fenButton = document.querySelector("#fenButton");
-fenButton.addEventListener("click", function () {
-    var pgnString = generateFen();
-    alert("PGN String:\n" + pgnString);
-});
+if (fenButton) {
+    fenButton.addEventListener("click", function () {
+        var pgnString = generateFen();
+        alert("PGN String:\n" + pgnString);
+    });
+}
 //Button to refresh
 var refreshButton = document.querySelector("#refButton");
-refreshButton.addEventListener("click", function () {
-    window.location.reload();
-});
+if (refreshButton) {
+    refreshButton.addEventListener("click", function () {
+        window.location.reload();
+    });
+}
 function BuildFen() {
     var pgn = "";
     pgn += "[FEN \"" + BuildFen() + "\"]\n\n";

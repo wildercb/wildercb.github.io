@@ -100,16 +100,12 @@ function checkEloCondition() {
   if (eloAside) {
     if (solvedPuzzles === 3) {
       if (badMoves.length > 5) {
-        // Update the content of the aside element
         eloAside.textContent = 'Your ELO is probably at least 100!';
       } else if (badMoves.length > 3) {
-        // Update the content of the aside element
         eloAside.textContent = 'Your ELO is probably at least 400!';
       } else if (badMoves.length > 1) {
-        // Update the content of the aside element
         eloAside.textContent = 'Your ELO is at least 600!';
       } else if (badMoves.length === 0) {
-        // Update the content of the aside element
         eloAside.textContent = 'Your ELO is at least 800!';
       }
     }

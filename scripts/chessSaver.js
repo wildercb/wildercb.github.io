@@ -96,24 +96,26 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', function () { return puzzleHandler(parseInt(puzzleId)); });
     });
 });
-var eloAside = document.querySelector('#eloBox');
+//Calculate Elo based on user performance 
 function checkEloCondition() {
-    if (solvedPuzzles === 3) {
-        if (badMoves.length > 5) {
-            // Update the content of the aside element
-            eloAside.textContent = 'Your ELO is probably at least 100!';
+    var eloAside = document.querySelector('#eloBox');
+    if (eloAside) {
+        if (solvedPuzzles === 3) {
+            if (badMoves.length > 5) {
+                eloAside.textContent = 'Your ELO is probably at least 100!';
+            }
+            else if (badMoves.length > 3) {
+                eloAside.textContent = 'Your ELO is probably at least 400!';
+            }
+            else if (badMoves.length > 1) {
+                eloAside.textContent = 'Your ELO is at least 600!';
+            }
+            else if (badMoves.length === 0) {
+                eloAside.textContent = 'Your ELO is at least 800!';
+            }
         }
-        else if (badMoves.length > 3) {
-            // Update the content of the aside element
-            eloAside.textContent = 'Your ELO is probably at least 400!';
-        }
-        else if (badMoves.length > 1) {
-            // Update the content of the aside element
-            eloAside.textContent = 'Your ELO is at least 600!';
-        }
-        else if (badMoves.length === 0) {
-            // Update the content of the aside element
-            eloAside.textContent = 'Your ELO is at least 800!';
-        }
+    }
+    else {
+        console.error('eloAside element not found');
     }
 }
