@@ -18,7 +18,7 @@ function puzzleHandler(puzzleNumber: number) {
           if (chessMove === 'Qg8') {
             puzzleMoves[0].push(chessMove);
             puzzleMoves[0].push('Rxg8'); 
-            chessPuzzleImage.src = 'images/puzzle1.2.png';
+            chessPuzzleImage.src = 'images/Puzzle1.2.png';
             pgnInput.value = ''; 
           } else {
             badMoves.push(chessMove)
@@ -28,7 +28,7 @@ function puzzleHandler(puzzleNumber: number) {
           pgnInput.value = 'Congratulation, you win';
           puzzleMoves[0].push(chessMove);
           pgnInput.disabled = true; 
-          chessPuzzleImage.src = 'images/puzzle1.3.png';
+          chessPuzzleImage.src = 'images/Puzzle1.3.png';
           solvedPuzzles = solvedPuzzles + 1;
         } else {
           alert('Incorrect move. Try again.');
@@ -49,7 +49,7 @@ function puzzleHandler(puzzleNumber: number) {
           puzzleMoves[1].push(chessMove);
           pgnInput.value = 'Congratulation, you win';
           pgnInput.disabled = true; 
-          chessPuzzleImage.src = 'images/puzzle2.3.png';
+          chessPuzzleImage.src = 'images/Puzzle2.3.png';
           solvedPuzzles = solvedPuzzles + 1;
         } else {
           alert('Incorrect move. Try again.');
@@ -70,7 +70,7 @@ function puzzleHandler(puzzleNumber: number) {
           puzzleMoves[2].push(chessMove);
           pgnInput.value = 'Congratulation, you win';
           pgnInput.disabled = true; 
-          chessPuzzleImage.src = 'images/puzzle3.3.png';
+          chessPuzzleImage.src = 'images/Puzzle3.3.png';
           solvedPuzzles = solvedPuzzles + 1;
         } else {
           alert('Incorrect move. Try again.');
