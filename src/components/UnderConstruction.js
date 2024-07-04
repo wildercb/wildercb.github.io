@@ -1,5 +1,5 @@
 import React from 'react';
-import SacredGeometryScene from './SacredGeometryScene';
+//import SacredGeometryScene from './SacredGeometryScene';
 import ExpandedCosmicPortfolio from './SacredGeometryScene'
 import '../styles/UnderConstruction.css';
 
