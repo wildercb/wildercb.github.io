@@ -1,0 +1,92 @@
+/* blog.css */
+
+#blog {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.blog-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.blog-card {
+    background-color: rgba(0, 255, 0, 0.05);
+    border-left: 3px solid var(--primary-color);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateX(5px);
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+.blog-card h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.blog-card a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog-card a:hover {
+    color: var(--accent-color);
+}
+
+.blog-date {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.blog-excerpt {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Styles for individual blog post pages */
+.blog-post {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-left: 3px solid var(--primary-color);
+}
+
+.blog-title {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.blog-content {
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.blog-content p {
+    margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #blog {
+        padding: 1rem;
+    }
+
+    .blog-card h2 {
+        font-size: 1.3rem;
+    }
+
+    .blog-title {
+        font-size: 1.8rem;
+    }
+}
