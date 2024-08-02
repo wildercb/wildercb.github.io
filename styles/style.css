@@ -74,7 +74,6 @@ nav ul li a {
   letter-spacing: 1px; /* Improved letter spacing for readability */
   transition: all 0.3s ease;
   position: relative;
-  padding: 5px 5px;
 }
 
 nav ul li a::after {
@@ -381,18 +380,7 @@ h1::before, h2::before {
     /* Add styles for your logos here */
   }
   
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 3rem;
-    }
-    
-    .quick-stats {
-      flex-direction: column;
-      gap: 1rem;
-    }
-  }
-
-  .social-links {
+.social-links {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
@@ -630,7 +618,7 @@ footer a:hover {
 
 /* Typing text effect */
 .typing-text {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: var(--primary-color);
   border-right: 2px solid var(--primary-color);
   white-space: nowrap;
@@ -868,3 +856,32 @@ footer a:hover {
         padding-top: 75%; /* Adjust for mobile view if needed */
     }
 }
+
+/* Tab size */
+@media (max-width: 768px) {
+    h1 {
+      font-size: 3rem;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+    
+    .quick-stats {
+      flex-direction: column;
+      gap: 1rem;
+    }
+}
+
+
+/* Phone size */
+@media (max-width: 600px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    nav ul li a {
+        font-size: 0.7rem;
+    }
+}
+  

@@ -134,8 +134,9 @@ techIcons.forEach(icon => {
 
 document.addEventListener('DOMContentLoaded', function() {
     const phrases = [
-      "Machine learning researcher",
-      "Aspiring software building proffesional"
+      "Machine learning researcher.",
+      "Software builder.",
+      "Idea generator."
     ];
     const typingText = document.getElementById('typingText');
     let phraseIndex = 0;
@@ -147,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const currentPhrase = phrases[phraseIndex];
       
       if (isPaused) {
-        setTimeout(typePhrase, 2000); // Pause for 2 seconds
+        setTimeout(typePhrase, 1500); // Pause for 2 seconds
         isPaused = false;
         return;
       }
@@ -178,35 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
     typePhrase();
   });
-  document.addEventListener('DOMContentLoaded', function() {
-    function animateSkills() {
-      const skillBars = document.querySelectorAll('.skill-bar');
-      
-      skillBars.forEach(bar => {
-        const skill = bar.getAttribute('data-skill');
-        bar.style.setProperty('--skill-percent', skill + '%');
-        
-        setTimeout(() => {
-          bar.style.width = skill + '%';
-        }, 300);
-      });
-    }
-  
-    // Trigger the animation when the skills section is in view
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateSkills();
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-  
-    const skillsSection = document.querySelector('.key-skills');
-    if (skillsSection) {
-      observer.observe(skillsSection);
-    }
-  });
+
 
 // Make scroll indicator dissapear
 
