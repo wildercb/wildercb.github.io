@@ -208,4 +208,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  
+// Make scroll indicator dissapear
+
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    const homeSection = document.getElementById('home');
+
+    if (!scrollIndicator || !homeSection) {
+        console.error('Could not find scroll indicator or home section');
+        return;
+    }
+
+    function checkScroll() {
+        const homeSectionBottom = homeSection.offsetTop + homeSection.offsetHeight;
+        if (window.pageYOffset > homeSectionBottom - window.innerHeight) {
+            scrollIndicator.style.opacity = '0';
+            scrollIndicator.style.pointerEvents = 'none';
+            // Remove the event listener once the indicator is hidden
+            window.removeEventListener('scroll', checkScroll);
+        }
+    }
+
+    window.addEventListener('scroll', checkScroll);
+    // Check initially in case the page is loaded scrolled down
+    checkScroll();
+});
