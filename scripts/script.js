@@ -136,7 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const phrases = [
       "Machine learning researcher.",
       "Software builder.",
-      "Idea generator."
     ];
     const typingText = document.getElementById('typingText');
     let phraseIndex = 0;
