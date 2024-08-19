@@ -135,7 +135,7 @@ techIcons.forEach(icon => {
 document.addEventListener('DOMContentLoaded', function() {
     const phrases = [
       "Machine learning researcher.",
-      "Software builder.",
+      "Full stack software builder.",
     ];
     const typingText = document.getElementById('typingText');
     let phraseIndex = 0;
