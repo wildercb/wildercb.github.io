@@ -1,5 +1,9 @@
 /* blog.css */
 
+body {
+    background-color: white;
+    color: black;
+}
 #blog {
     max-width: 800px;
     margin: 0 auto;

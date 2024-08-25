@@ -1,80 +1,132 @@
-/* past-work.css */
-
-#past-work {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-}
+/* past_work.css */
 
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .project-card {
+    display: flex;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.7);
     border: 1px solid var(--accent-color);
     border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 204, 255, 0.1);
+    width: 100%;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 255, 0, 0.2);
+.project-image-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Fixed height for consistency */
+    overflow: hidden;
+}
+
+.project-image-carousel {
+    display: flex;
+    transition: transform 0.3s ease;
 }
 
 .project-image {
     width: 100%;
-    height: 100px;
-    object-fit: cover;
-    border-bottom: 1px solid var(--accent-color);
+    height: 400px;
+    object-fit: cover; /* This will crop the image to fill the space */
+    flex-shrink: 0;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 204, 255, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 204, 255, 0.8);
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
 }
 
 .project-details {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
 }
 
-.project-details h3 {
-    color: var(--primary-color);
+.project-title {
+    color: var(--accent-color);
+    font-size: 1.8rem;
     margin-bottom: 0.5rem;
 }
 
-.project-details p {
+.project-description {
     color: var(--text-color);
-    font-size: 0.9rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.project-skills {
     margin-bottom: 1rem;
 }
 
-.tech-stack {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.tech-icon {
-    font-size: 1.2rem;
+.skill-badge {
+    display: inline-block;
+    background-color: rgba(0, 204, 255, 0.1);
     color: var(--accent-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .project-link {
     display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: var(--background-color);
     text-decoration: none;
+    padding: 0.75rem 1.5rem;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    align-self: flex-start;
 }
 
 .project-link:hover {
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
-    .project-grid {
-        grid-template-columns: 1fr;
+    .project-image-container {
+        height: 300px;
+    }
+
+    .project-image {
+        height: 300px;
+    }
+
+    .project-title {
+        font-size: 1.5rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
     }
 }
