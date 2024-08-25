@@ -2,27 +2,6 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-            if (href.startsWith('#') || href.includes('#')) {
-                e.preventDefault();
-                let targetId;
-                if (href.startsWith('#')) {
-                    targetId = href;
-                } else {
-                    targetId = '#' + href.split('#')[1];
-                }
-                const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
-                } else if (href.includes('#')) {
-                    window.location.href = href;
-                }
-            }
-        });
-    });
 
     // Typing text effect
     const typingText = document.getElementById('typingText');
