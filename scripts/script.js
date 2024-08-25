@@ -1,15 +1,25 @@
 // script.js
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for navigation links (only for same-page links)
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+    const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth' });
+            const href = link.getAttribute('href');
+            if (href.startsWith('#') || href.includes('#')) {
+                e.preventDefault();
+                let targetId;
+                if (href.startsWith('#')) {
+                    targetId = href;
+                } else {
+                    targetId = '#' + href.split('#')[1];
+                }
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                } else if (href.includes('#')) {
+                    window.location.href = href;
+                }
             }
         });
     });
