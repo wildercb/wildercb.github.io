@@ -1,23 +1,75 @@
 // script.js
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('nav a');
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for navigation links (only for same-page links)
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            targetSection.scrollIntoView({ behavior: 'smooth' });
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 
+    // Typing text effect
+    const typingText = document.getElementById('typingText');
+    if (typingText) {
+        const phrases = [
+            "Machine learning researcher.",
+            "Full stack software builder.",
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let isPaused = false;
+
+        function typePhrase() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isPaused) {
+                setTimeout(typePhrase, 1500);
+                isPaused = false;
+                return;
+            }
+
+            if (isDeleting) {
+                typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            typingText.style.borderRight = '2px solid var(--primary-color)';
+
+            let typingSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                isPaused = true;
+                isDeleting = true;
+                return setTimeout(typePhrase, 1000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+            }
+
+            setTimeout(typePhrase, typingSpeed);
+        }
+
+        typePhrase();
+    }
+
     // Parallax effect for the home section
     const homeSection = document.querySelector('#home');
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.pageYOffset;
-        homeSection.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
-    });
+    if (homeSection) {
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.pageYOffset;
+            homeSection.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+        });
+    }
 
     // Animate project cards on scroll
     const projectCards = document.querySelectorAll('.project-card');
@@ -38,170 +90,97 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Form submission handling
     const contactForm = document.querySelector('#contact-form');
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Here you would typically send the form data to a server
-        // For this example, we'll just show an alert
-        alert('Thank you for your message! I\'ll get back to you soon.');
-        contactForm.reset();
-    });
-});
-// Typewriter effect for the main title
-function typeWriter(element, text, speed) {
-    let i = 0;
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! I\'ll get back to you soon.');
+            contactForm.reset();
+        });
     }
-    type();
-}
 
-const mainTitle = document.querySelector('#home h1');
-//typeWriter(mainTitle, "Wilder Baldwin", 100);
+    // Glitch effect on hover for headings
+    const headings = document.querySelectorAll('h1, h2');
+    headings.forEach(heading => {
+        heading.addEventListener('mouseover', () => {
+            heading.style.animation = 'glitch 0.3s infinite';
+        });
+        heading.addEventListener('mouseout', () => {
+            heading.style.animation = 'none';
+        });
+    });
+
+    // Create particles
+    createParticles();
+
+    // Tech icon tooltips
+    const techIcons = document.querySelectorAll('.tech-icon');
+    techIcons.forEach(icon => {
+        icon.addEventListener('mouseenter', (e) => {
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            tooltip.textContent = e.target.getAttribute('title');
+            document.body.appendChild(tooltip);
+
+            const iconRect = e.target.getBoundingClientRect();
+            tooltip.style.top = `${iconRect.top - tooltip.offsetHeight - 10}px`;
+            tooltip.style.left = `${iconRect.left + iconRect.width / 2 - tooltip.offsetWidth / 2}px`;
+        });
+
+        icon.addEventListener('mouseleave', () => {
+            const tooltip = document.querySelector('.tooltip');
+            if (tooltip) {
+                tooltip.remove();
+            }
+        });
+    });
+
+    // Scroll indicator
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator && homeSection) {
+        function checkScroll() {
+            const homeSectionBottom = homeSection.offsetTop + homeSection.offsetHeight;
+            if (window.pageYOffset > homeSectionBottom - window.innerHeight) {
+                scrollIndicator.style.opacity = '0';
+                scrollIndicator.style.pointerEvents = 'none';
+                window.removeEventListener('scroll', checkScroll);
+            }
+        }
+
+        window.addEventListener('scroll', checkScroll);
+        checkScroll();
+    }
+});
 
 // Parallax effect for projects
 window.addEventListener('scroll', () => {
     const projects = document.querySelectorAll('.project-card');
     projects.forEach(project => {
-        const speed = 5; // Adjust for more or less movement
+        const speed = 5;
         const yPos = -(window.pageYOffset / speed);
         project.style.backgroundPosition = `center ${yPos}px`;
     });
 });
 
-// Glitch effect on hover for headings
-const headings = document.querySelectorAll('h1, h2');
-headings.forEach(heading => {
-    heading.addEventListener('mouseover', () => {
-        heading.style.animation = 'glitch 0.3s infinite';
-    });
-    heading.addEventListener('mouseout', () => {
-        heading.style.animation = 'none';
-    });
-});
-
 function createParticles() {
     const particlesContainer = document.querySelector('.cyber-particles');
-    const particleCount = 50;
+    if (particlesContainer) {
+        const particleCount = 50;
 
-    for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-        
-        // Random position
-        particle.style.left = `${Math.random() * 100}%`;
-        particle.style.top = `${Math.random() * 100}%`;
-        
-        // Random size
-        const size = Math.random() * 3 + 1;
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-        
-        // Random animation duration
-        const duration = Math.random() * 20 + 10;
-        particle.style.animationDuration = `${duration}s`;
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            
+            const size = Math.random() * 3 + 1;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            
+            const duration = Math.random() * 20 + 10;
+            particle.style.animationDuration = `${duration}s`;
 
-        particlesContainer.appendChild(particle);
+            particlesContainer.appendChild(particle);
+        }
     }
 }
-
-document.addEventListener('DOMContentLoaded', createParticles);
-
-const techIcons = document.querySelectorAll('.tech-icon');
-techIcons.forEach(icon => {
-    icon.addEventListener('mouseenter', (e) => {
-        const tooltip = document.createElement('div');
-        tooltip.className = 'tooltip';
-        tooltip.textContent = e.target.getAttribute('title');
-        document.body.appendChild(tooltip);
-
-        const iconRect = e.target.getBoundingClientRect();
-        tooltip.style.top = `${iconRect.top - tooltip.offsetHeight - 10}px`;
-        tooltip.style.left = `${iconRect.left + iconRect.width / 2 - tooltip.offsetWidth / 2}px`;
-    });
-
-    icon.addEventListener('mouseleave', () => {
-        const tooltip = document.querySelector('.tooltip');
-        if (tooltip) {
-            tooltip.remove();
-        }
-    });
-});
-// Call this function when the page loads
-
-document.addEventListener('DOMContentLoaded', function() {
-    const phrases = [
-      "Machine learning researcher.",
-      "Full stack software builder.",
-    ];
-    const typingText = document.getElementById('typingText');
-    let phraseIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let isPaused = false;
-  
-    function typePhrase() {
-      const currentPhrase = phrases[phraseIndex];
-      
-      if (isPaused) {
-        setTimeout(typePhrase, 1500); // Pause for 2 seconds
-        isPaused = false;
-        return;
-      }
-  
-      if (isDeleting) {
-        typingText.textContent = currentPhrase.substring(0, charIndex - 1);
-        charIndex--;
-      } else {
-        typingText.textContent = currentPhrase.substring(0, charIndex + 1);
-        charIndex++;
-      }
-  
-      typingText.style.borderRight = '2px solid var(--primary-color)';
-  
-      let typingSpeed = isDeleting ? 50 : 100;
-  
-      if (!isDeleting && charIndex === currentPhrase.length) {
-        isPaused = true;
-        isDeleting = true;
-        return setTimeout(typePhrase, 1000);
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        phraseIndex = (phraseIndex + 1) % phrases.length;
-      }
-  
-      setTimeout(typePhrase, typingSpeed);
-    }
-  
-    typePhrase();
-  });
-
-
-// Make scroll indicator dissapear
-
-document.addEventListener('DOMContentLoaded', function() {
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    const homeSection = document.getElementById('home');
-
-    if (!scrollIndicator || !homeSection) {
-        console.error('Could not find scroll indicator or home section');
-        return;
-    }
-
-    function checkScroll() {
-        const homeSectionBottom = homeSection.offsetTop + homeSection.offsetHeight;
-        if (window.pageYOffset > homeSectionBottom - window.innerHeight) {
-            scrollIndicator.style.opacity = '0';
-            scrollIndicator.style.pointerEvents = 'none';
-            // Remove the event listener once the indicator is hidden
-            window.removeEventListener('scroll', checkScroll);
-        }
-    }
-
-    window.addEventListener('scroll', checkScroll);
-    // Check initially in case the page is loaded scrolled down
-    checkScroll();
-});
