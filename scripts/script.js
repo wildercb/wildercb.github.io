@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typingText) {
         const phrases = [
             "Machine learning researcher.",
-            "Full stack software builder.",
+            "Software builder.",
         ];
         let phraseIndex = 0;
         let charIndex = 0;
